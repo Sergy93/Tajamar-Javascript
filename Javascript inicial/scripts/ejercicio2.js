@@ -19,12 +19,34 @@ function anadirAlumno() {
 function mostrarAlumnos() {
     var lista = document.getElementById("lista");
 
+
+
     if (alumnos.length < 1) {
-        lista.innerHTML = "<li> No hay alumnos que mostrar </li>";
+        var listNode = document.createElement("li");
+        var textNode = document.createElement("span");
+        textNode.innerHTML = "No hay alumnos que mostrar";
+
+        listNode.appendChild(textNode);
+        lista.appendChild(listNode);
     } else {
-        lista.innerHTML = "";
+
+        while (lista.lastChild) {
+            lista.removeChild(lista.lastChild);
+        }
+
         for (var i = 0; i < alumnos.length; i++) {
-            lista.innerHTML = lista.innerHTML += "<li onclick='cambiarElegido(" + i + ")'> <strong> Nombre: </strong>" + alumnos[i][0] + "<strong> Nota: </strong>" + alumnos[i][1] + "<strong> Edad: </strong>" + alumnos[i][2] + " </li>";
+            var listNode = document.createElement("li");
+            var clickAttr = document.createAttribute("onclick");
+
+            clickAttr.value = "cambiarElegido(" + i + ")";
+
+            listNode.setAttributeNode(clickAttr);
+
+            var textNode = document.createElement("span");
+            textNode.innerHTML = "<strong> Nombre: </strong>" + alumnos[i][0] + "<strong> Nota: </strong>" + alumnos[i][1] + "<strong> Edad: </strong>" + alumnos[i][2];
+
+            listNode.appendChild(textNode);
+            lista.appendChild(listNode);
         }
     }
 }
@@ -43,7 +65,6 @@ function calcularMedia() {
     if (alumnos.length < 1) {
         mostrar.innerHTML = "<li> No hay alumnos que mostrar </li>";
     } else {
-
         for (var i = 0; i < alumnos.length; i++) {
             total += alumnos[i][1];
         }
