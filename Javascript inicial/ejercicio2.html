@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/ejercicio2.css" rel="stylesheet" />
+
+</head>
+<body>
+    <h1 id="titulo">Alumnos</h1>
+
+    <form id="alumnos">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" />
+        <br />
+        <label for="nota">Nota</label>
+        <input id="nota" type="number" />
+        <br />
+        <label for="edad">Edad</label>
+        <input id="edad" type="number" />
+        <br /><br />
+        <input type="button" value="Guardar" id="Guardar" onclick="anadirAlumno();mostrarAlumnos()" />
+    </form>
+
+    <div id="mostrar" readonly="readonly"></div>
+    <br />
+
+    <h2 id="tituloLista">Lista de Alumnos</h2>
+
+    <ul id="lista"></ul>
+
+    <input type="button" value="Calcular Media" id="media" onclick="calcularMedia()" />
+
+</body>
+<script src="scripts/ejercicio2.js"></script>
+</html>

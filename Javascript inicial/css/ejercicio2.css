@@ -1,0 +1,20 @@
+﻿body {
+}
+
+input[type="text"], input[type="number"] {
+    position: absolute;
+    left: 100px;
+}
+
+li {
+    cursor: pointer;
+}
+
+#mostrar {
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    width: 200px;
+    height: 200px;
+    border: 2px dotted black;
+}
